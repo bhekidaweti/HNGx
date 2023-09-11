@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Page</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-testid="bhekidaweti">bhekidaweti</h1>
+    <img src="images/img.jpg" alt="bhekidaweti" data-testid="slackDisplayImage">
+    <p data-testid="currentDayOfTheWeek"></p>
+    <p data-testid="currentUTCTime"></p>
+    <p data-testid="myTrack">Frontend</p>
+    <a href="https://github.com/bhekidaweti/HNGx" data-testid="githubURL">My GitHub Repo</a>
+
+    <script>
+        // JavaScript code for getting and displaying current day of the week
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const currentDayIndex = new Date().getDay();
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = daysOfWeek[currentDayIndex];
+
+        // JavaScript code for getting and displaying UTC time in milliseconds
+        setInterval(() => {
+            const currentTimeMillis = new Date().getTime();
+            document.querySelector('[data-testid="currentUTCTime"]').textContent = currentTimeMillis;
+        }, 1000); // Update every second
+
+    </script>
+</body>
+</html>
